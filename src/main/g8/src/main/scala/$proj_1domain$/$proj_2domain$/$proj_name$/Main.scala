@@ -25,16 +25,16 @@ object Main extends LazyLogging {
     """.stripMargin
 
   def run(config: CommandLineArgs): Unit = {
-    logger.info(s"running ${progName} version ${progVersion}")
+    logger.info(s"running \${progName} version \${progVersion}")
     val conf = pureconfig.loadConfig[Configuration](config.file)
 
     conf match {
       case Right(c) =>
         logger.debug("loading default configuracion")
-      case Left(fails) => logger.error(s"${fails.toString}")
+      case Left(fails) => logger.error(s"\${fails.toString}")
     }
 
-    logger.info(s"ending ${progName} version ${progVersion}")
+    logger.info(s"ending \${progName} version \${progVersion}")
   }
 
   def main(args: Array[String]) {
