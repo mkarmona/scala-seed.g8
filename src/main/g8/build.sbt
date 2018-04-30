@@ -3,11 +3,11 @@ import Dependencies._
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
-      organization := "com.example",
-      scalaVersion := "2.12.5",
+      organization := "$proj_1domain$.$proj_2domain$",
+      scalaVersion := "$proj_scala_version$",
       version      := "0.1"
     )),
-    name := "Hello",
+    name := "$proj_name$",
     libraryDependencies += scalaTest % Test,
 
     resolvers += Resolver.sonatypeRepo("releases"),
