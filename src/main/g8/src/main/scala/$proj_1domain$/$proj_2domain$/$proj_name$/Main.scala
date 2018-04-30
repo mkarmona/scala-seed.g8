@@ -1,5 +1,7 @@
 package $proj_1domain$.$proj_2domain$.$proj_name$
 
+import java.nio.file.{Path, Paths}
+
 import com.typesafe.scalalogging.LazyLogging
 import scopt.OptionParser
 
