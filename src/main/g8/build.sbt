@@ -8,16 +8,20 @@ lazy val root = (project in file(".")).
       version      := "0.1"
     )),
     name := "$proj_name$",
-    libraryDependencies += scalaTest % Test,
+    // libraryDependencies += scalaTest % Test,
 
     resolvers += Resolver.sonatypeRepo("releases"),
 
     // more dependencies here
+    libraryDependencies += miniTest,
+    libraryDependencies += miniTestLaws,
     libraryDependencies += scalaCheck,
     libraryDependencies += scopt,
     libraryDependencies += configLB,
     libraryDependencies += scalaLoggingDep,
     libraryDependencies += scalaLogging,
+
+    testFrameworks += new TestFramework("minitest.runner.Framework")
 
     assemblyMergeStrategy in assembly := {
       case PathList("org","aopalliance", xs @ _*) => MergeStrategy.last
